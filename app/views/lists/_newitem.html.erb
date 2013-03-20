@@ -1,0 +1,25 @@
+<table class="table table-bordered table-striped">
+<%= form_for [@list, @list_item] do |f| %>
+	<tr>
+		<td>
+  <div class="field">
+    <%= f.label :task %><br />
+    <%= f.text_field :task %>
+  </div></td>
+  <td><div class="field">
+    <%= f.label :priority %><br />
+    <%= f.select :priority, [['High', '1'], ['Medium', '2'], ['Low', '3']] %>
+  </div></td>
+ <td><div class="field">
+    <%= f.label :deadline %><br />
+    <%= f.date_select :deadline %>
+  </div></td>
+  <td><div class="actions">
+    <%= f.submit %>
+  </div></td>
+</tr>
+<% end %>
+</table>
+<br />
+
+<%= link_to 'New List item', new_list_list_item_path(@list) %>

@@ -1,0 +1,36 @@
+<p>
+  <b><%= @list.title %></b>
+</p>
+<table class="table table-striped">
+	<thead>
+  <tr>
+    <th>Task</th>
+    <th>Priority</th>
+    <th>Deadline</th>
+    <th>Completed?</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @list_items.each do |list_item| %>
+  <tr>
+    <td><%= list_item.task %></td>
+    <td><%= list_item.priority %></td>
+    <td><%= list_item.deadline %></td>
+    <td><%= list_item.complete %></td>
+    <td><%= link_to 'Edit', edit_list_list_item_path(@list, list_item) %></td>
+    <td><%= link_to 'Destroy', [@list, list_item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+
+<% end %>
+</tbody>
+</table>
+<br>
+<br>
+<p><b>Add New Task</b></p>
+<%= render 'newitem' %>
+
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %>
