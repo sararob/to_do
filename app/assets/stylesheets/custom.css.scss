@@ -20,7 +20,7 @@ $navbarBackground: white;
 
 .footer {
 	
-	margin-top: 50px;
+	margin-top: 30px;
 	margin-left:10px;
 	color: $grayLight; 
 	a {
@@ -70,4 +70,23 @@ header.container.navbar-container {
 		color:#777777;
 		text-decoration:underline;
 	}
+}
+
+.signedinpage {
+	text-align:center;
+	position:relative;
+}
+
+.lead a {
+		text-decoration:underline;
+		color:white;
+		&:hover {
+			color:#FFFFCC;
+		}
+		&:active {
+			color:white;
+		}
+		&:visited {
+			color:white;
+		}
 }
