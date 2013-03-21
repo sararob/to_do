@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   has_many :lists
+  has_many :list_items
 end

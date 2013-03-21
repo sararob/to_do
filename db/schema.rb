@@ -11,19 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130320190415) do
+ActiveRecord::Schema.define(:version => 20130321181449) do
 
   create_table "list_items", :force => true do |t|
     t.string   "task"
     t.string   "priority"
     t.date     "deadline"
-    t.boolean  "complete", :default => false
+    t.boolean  "complete"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "list_id"
+    t.integer  "user_id"
   end
 
   add_index "list_items", ["list_id"], :name => "index_list_items_on_list_id"
+  add_index "list_items", ["user_id"], :name => "index_list_items_on_user_id"
 
   create_table "lists", :force => true do |t|
     t.string   "title"

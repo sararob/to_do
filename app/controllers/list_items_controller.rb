@@ -47,6 +47,7 @@ class ListItemsController < ApplicationController
   def create
     @list = List.find(params[:list_id])
     @list_item = @list.list_items.build(params[:list_item])
+    @list_item[:user_id] = current_user.id
 
       if @list_item.save
         flash[:success] = "Item successfully added"

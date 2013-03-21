@@ -59,4 +59,15 @@ $navbarBackground: white;
 
 header.container.navbar-container {
 	height:40px;
+	color:#0088CC;
+}
+
+.navbar .nav > li > a {
+	color:#0088CC;
+	font-weight:bold;
+	font-size:110%;
+	&:hover {
+		color:#777777;
+		text-decoration:underline;
+	}
 }
