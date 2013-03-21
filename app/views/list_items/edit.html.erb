@@ -1,0 +1,21 @@
+<h3>Edit "<%= @list_item[:task] %>"</h3>
+<%= form_for [@list, @list_item] do |f| %>
+	<tr>
+		<td>
+  <div class="field">
+    <%= f.label :task %><br />
+    <%= f.text_field :task %>
+  </div></td>
+  <td><div class="field">
+    <%= f.label :priority %><br />
+    <%= f.select :priority, [['High', 'High'], ['Medium', 'Medium'], ['Low', 'Low']] %>
+  </div></td>
+ <td><div>
+    <%= f.label :deadline %><br />
+    <%= f.text_field :deadline %>
+  </div></td>
+  <td><div class="actions">
+    <%= f.submit "Update task", class: "btn btn-primary" %>
+  </div></td>
+</tr>
+<% end %>

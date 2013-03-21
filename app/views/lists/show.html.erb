@@ -16,11 +16,13 @@
   </tr>
 </thead>
 <tbody>
+
 <% if @list_items.empty? %>
 <p>There are no list items, create one below</p>
 <% end %>
 <% @list_items.each do |list_item| %>
-<% deadline = list_item.deadline
+<%
+deadline = list_item.deadline
 if deadline.today?
 	deadline = "Today"
 elsif deadline == Date.tomorrow

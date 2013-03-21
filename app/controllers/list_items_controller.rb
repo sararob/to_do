@@ -38,7 +38,8 @@ class ListItemsController < ApplicationController
   # GET /list_items/1/edit
   def edit
     @list = List.find(params[:list_id])
-    @list_items = @list.list_items.find(params[:list_id])
+    @list_item = @list.list_items.find(params[:id])
+    edit_list_list_item_path(@list, @list_item)
   end
 
   # POST /list_items
@@ -59,17 +60,16 @@ class ListItemsController < ApplicationController
   # PUT /list_items/1
   # PUT /list_items/1.json
   def update
-    @list_item = current_list.list_items.find(params[:id])
+    @list = List.find(params[:list_id])
+    @list_item = @list.list_items.find(params[:id])
 
-    respond_to do |format|
       if @list_item.update_attributes(params[:list_item])
-        format.html { redirect_to @list_item, notice: 'List item was successfully updated.' }
-        format.json { head :no_content }
+        flash[:success] = "List item was successfully updated."
+        redirect_to list_path(@list)  
       else
-        format.html { render action: "edit" }
-        format.json { render json: @list_item.errors, status: :unprocessable_entity }
+        flash[:errror] = "Unable to update item."
+        redirect_to edit_list_list_item_path(@list, @list_item)
       end
-    end
   end
 
   # DELETE /list_items/1
