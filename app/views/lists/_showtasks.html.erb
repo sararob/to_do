@@ -1,0 +1,43 @@
+<% if @list_items.empty? %>
+<% else %>
+<table class="table table-hover table-bordered">
+	<thead>
+  <tr>
+    <th>Task</th>
+    <th>Priority</th>
+    <th>Deadline</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @list_items.each do |list_item| %>
+<%
+deadline = list_item.deadline
+if deadline.today?
+	deadline = "Today"
+elsif deadline == Date.tomorrow
+	deadline = "Tomorrow"
+else
+	deadline = deadline.strftime("%A, %b %d")
+end
+ %>
+
+<% if list_item.complete == true %>
+<% else %>
+  <tr>
+    <td><%= list_item.task %></td>
+    <td><%= list_item.priority %></td>
+    <td><%= deadline %></td>
+    <td><%= link_to 'Mark Complete', item_complete_path(list_id: @list.id, id: list_item.id), method: :post %></td>
+    <td><%= link_to 'Edit', edit_list_list_item_path(@list, list_item) %></td>
+    <td><%= link_to 'Delete', [@list, list_item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+<% end %>
+</tbody>
+</table>
+<br>
+<br>
+<% end %>

@@ -1,4 +1,5 @@
-<table class="table table-bordered table-striped">
+<h4><b>Add New Task</h4></p>
+<table class="table table-bordered">
 <%= form_for [@list, @list_item] do |f| %>
 	<tr>
 		<td>
@@ -15,7 +16,7 @@
     <%= f.text_field :deadline %>
   </div></td>
   <td><div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit, class: "btn" %>
   </div></td>
 </tr>
 <% end %>

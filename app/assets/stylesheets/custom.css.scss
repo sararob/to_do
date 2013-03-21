@@ -106,3 +106,37 @@ header.container.navbar-container {
 		color:#FFFFCC;
 	}
 }
+
+/* List Index Page */
+
+.page {
+	max-width: 1060px;
+	padding:3em 2em;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.page-section {
+	display:block;
+}
+
+.page-section-header {
+	margin-bottom:1em;
+	text-align:center;
+}
+
+.list-view {
+	padding:1.65em 2em 2em;
+	background-color:#FFFFCC;
+	border-radius:5px;
+}
+
+.list-name {
+	font-size:115%;
+	font-weight:bold;
+	width:300px;
+}
+
+.actions {
+	width:70px;
+}
