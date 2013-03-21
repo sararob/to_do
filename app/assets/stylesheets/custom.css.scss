@@ -78,15 +78,31 @@ header.container.navbar-container {
 }
 
 .lead a {
-		text-decoration:underline;
-		color:white;
+		text-decoration:none;
+		color:#FFFFCC;
 		&:hover {
 			color:#FFFFCC;
-		}
+	    text-decoration: underline;
+	  }
 		&:active {
-			color:white;
+			color:#FFFFCC;
 		}
 		&:visited {
-			color:white;
+			color:#FFFFCC;
 		}
+}
+
+.list-link a {
+	text-decoration:none;
+	color:#FFFFCC;
+	&:hover {
+		color:#FFFFCC;
+    text-decoration: underline;
+  }
+	&:active {
+		color:#FFFFCC;
+	}
+	&:visited {
+		color:#FFFFCC;
+	}
 }
