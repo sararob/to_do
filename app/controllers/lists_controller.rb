@@ -84,4 +84,7 @@ class ListsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def completed
+  end
 end

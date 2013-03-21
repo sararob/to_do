@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20130320190415) do
     t.string   "task"
     t.string   "priority"
     t.date     "deadline"
-    t.boolean  "complete"
+    t.boolean  "complete", :default => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "list_id"

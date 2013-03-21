@@ -56,6 +56,20 @@ class ListItemsController < ApplicationController
         redirect_to list_path(@list)
       end
   end
+  
+  def complete
+    @list = List.find(params[:list_id])
+    @list_item = @list.list_items.find(params[:id])
+    @list_item.update_attribute(:complete, true)
+    
+    if @list_item.update_attribute(:complete, @list_item[:complete])
+      flash[:success] = "Task Completed!"
+      redirect_to list_path(@list)
+    else
+      flash[:error] = "Unable to mark complete"
+      redirect_to list_path(@list)
+    end
+  end
 
   # PUT /list_items/1
   # PUT /list_items/1.json

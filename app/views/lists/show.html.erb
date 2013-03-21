@@ -1,5 +1,5 @@
 <p>
-  <h2><%= @list.title %></h2>
+  <h2 id="title"><%= @list.title %></h2>
 </p>
 <% if @list_items.empty? %>
 <% else %>
@@ -31,15 +31,18 @@ else
 	deadline = deadline.strftime("%A, %b %d")
 end
  %>
+
+<% if list_item.complete == true %>
+<% else %>
   <tr>
     <td><%= list_item.task %></td>
     <td><%= list_item.priority %></td>
     <td><%= deadline %></td>
-    <td><%= link_to 'Mark Complete', list_path %></td>
+    <td><%= link_to 'Mark Complete', item_complete_path(list_id: @list.id, id: list_item.id), method: :post %></td>
     <td><%= link_to 'Edit', edit_list_list_item_path(@list, list_item) %></td>
     <td><%= link_to 'Delete', [@list, list_item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
-
+<% end %>
 <% end %>
 </tbody>
 </table>
@@ -50,4 +53,4 @@ end
 <%= render 'newitem' %>
 
 <%= link_to 'Rename List', edit_list_path(@list) %> |
-<%= link_to 'View My Lists', lists_path %>
+<%= link_to 'View My Lists', lists_path %> | <%= link_to 'My Completed Tasks', completed_path(current_user) %>

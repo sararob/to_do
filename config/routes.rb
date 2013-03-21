@@ -9,6 +9,10 @@ ToDo::Application.routes.draw do
 
   get 'about' => "pages#about"
   
+  get 'completed' => "lists#completed"
+  
+  post '/list_items/complete' => 'list_items#complete', :as => :item_complete
+  
   root :to => "pages#home"
 
   # The priority is based upon order of creation:

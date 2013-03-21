@@ -1,0 +1,15 @@
+<h2><%= current_user.name %>'s Completed Tasks</h2>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Task</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @list_items.each do |list_item| %>
+				<tr>
+					<td><%= list_item.task %></td>
+				</tr>
+					<% end %>
+	</tbody>
+	</table>
