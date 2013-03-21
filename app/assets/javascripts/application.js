@@ -13,3 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function (){
+        $('#list_item_deadline').datepicker();
+});

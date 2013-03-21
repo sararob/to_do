@@ -10,9 +10,9 @@
     <%= f.label :priority %><br />
     <%= f.select :priority, [['High', '1'], ['Medium', '2'], ['Low', '3']] %>
   </div></td>
- <td><div class="field">
+ <td><div>
     <%= f.label :deadline %><br />
-    <%= f.date_select :deadline %>
+    <%= f.text_field :deadline %>
   </div></td>
   <td><div class="actions">
     <%= f.submit %>
@@ -22,4 +22,3 @@
 </table>
 <br />
 
-<%= link_to 'New List item', new_list_list_item_path(@list) %>

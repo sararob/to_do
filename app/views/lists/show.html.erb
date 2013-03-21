@@ -1,27 +1,41 @@
 <p>
-  <b><%= @list.title %></b>
+  <h2><%= @list.title %></h2>
 </p>
+<% if @list_items.empty? %>
+<% else %>
 <table class="table table-striped">
 	<thead>
   <tr>
     <th>Task</th>
     <th>Priority</th>
     <th>Deadline</th>
-    <th>Completed?</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 </thead>
 <tbody>
+<% if @list_items.empty? %>
+<p>There are no list items, create one below</p>
+<% end %>
 <% @list_items.each do |list_item| %>
+<% deadline = list_item.deadline
+if deadline.today?
+	deadline = "Today"
+elsif deadline == Date.tomorrow
+	deadline = "Tomorrow"
+else
+	deadline = deadline.strftime("%A, %b %d")
+end
+ %>
   <tr>
     <td><%= list_item.task %></td>
     <td><%= list_item.priority %></td>
-    <td><%= list_item.deadline %></td>
-    <td><%= list_item.complete %></td>
+    <td><%= deadline %></td>
+    <td><%= link_to 'Mark Complete', list_path %></td>
     <td><%= link_to 'Edit', edit_list_list_item_path(@list, list_item) %></td>
-    <td><%= link_to 'Destroy', [@list, list_item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Delete', [@list, list_item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 
 <% end %>
@@ -29,8 +43,9 @@
 </table>
 <br>
 <br>
-<p><b>Add New Task</b></p>
+<% end %>
+<h4><b>Add New Task</h4></p>
 <%= render 'newitem' %>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<%= link_to 'Rename List', edit_list_path(@list) %> |
+<%= link_to 'View My Lists', lists_path %>
