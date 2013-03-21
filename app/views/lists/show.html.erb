@@ -11,5 +11,8 @@
 			</div>
 		</section>
 	</div>
-<%= link_to 'Rename List', edit_list_path(@list) %> |
-<%= link_to 'View My Lists', lists_path %> | <%= link_to 'My Completed Tasks', completed_path(current_user) %>
+	
+<div class="list-footer">
+	<%= link_to 'Rename List', edit_list_path(@list) %> |
+	<%= link_to 'View My Lists', lists_path %> | <%= link_to 'My Completed Tasks', completed_path(current_user) %>
+</div>

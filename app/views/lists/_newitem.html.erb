@@ -3,20 +3,20 @@
 <%= form_for [@list, @list_item] do |f| %>
 	<tr>
 		<td>
-  <div class="field">
+  <div class="field newtaskform">
     <%= f.label :task %><br />
     <%= f.text_field :task %>
   </div></td>
-  <td><div class="field">
+  <td><div class="field newtaskform">
     <%= f.label :priority %><br />
     <%= f.select :priority, [['High', 'High'], ['Medium', 'Medium'], ['Low', 'Low']] %>
   </div></td>
- <td><div>
+ <td><div class="field newtaskform">
     <%= f.label :deadline %><br />
     <%= f.text_field :deadline %>
   </div></td>
   <td><div class="actions">
-    <%= f.button :submit, class: "btn" %>
+    <%= f.submit "Add Task", class: "btn btn-primary" %>
   </div></td>
 </tr>
 <% end %>

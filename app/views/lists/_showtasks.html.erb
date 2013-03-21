@@ -27,10 +27,10 @@ end
 <% if list_item.complete == true %>
 <% else %>
   <tr>
-    <td><%= list_item.task %></td>
+    <td class="show-task"><%= list_item.task %></td>
     <td><%= list_item.priority %></td>
     <td><%= deadline %></td>
-    <td><%= link_to 'Mark Complete', item_complete_path(list_id: @list.id, id: list_item.id), method: :post %></td>
+    <td><%= link_to 'Mark Complete', item_complete_path(list_id: @list.id, id: list_item.id), method: :post, class: "btn btn-success" %></td>
     <td><%= link_to 'Edit', edit_list_list_item_path(@list, list_item) %></td>
     <td><%= link_to 'Delete', [@list, list_item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

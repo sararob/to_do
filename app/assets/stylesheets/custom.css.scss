@@ -1,21 +1,19 @@
 $baseFontFamily: Oxygen;
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
 
-$navbarBackgroundHighlight: white;
-$navbarBackground: white;
-
 @import "bootstrap";
 
 @import 'bootstrap-responsive';
 
 .navbar-inner {
-	@include box-shadow(none !important);
-	border: 0;
+	/* @include box-shadow(none !important); */
+	border: 0; 
+
 }
 
-.container .navbar-container {
+header.container.navbar-container {
 	height:45px;
-	border-bottom:solid black;
+	border:1px solid #d4d4d4;
 }
 
 .footer {
@@ -139,4 +137,75 @@ header.container.navbar-container {
 
 .actions {
 	width:70px;
+}
+
+/* Individual list show page */
+
+.show-task {
+	font-size:110%;
+	max-width:350px;
+}
+
+.checkoff {
+	a {
+		color:#339900;
+	}
+}
+
+.newtaskform {
+	width:250px;
+}
+
+.actions {
+	width:100px;
+	text-align:center;
+	margin-top:30px;
+}
+
+.list-footer {
+	text-align:center;
+}
+
+/* Completed Tasks Page */
+
+.done-task {
+	width:150px;
+}
+
+/* Sign Up Page */
+
+.sign-up-form {
+	margin-left:20px;
+}
+
+.form-actions {
+	background-color:none;
+}
+
+/* Sign In Page */
+
+.sign-in-form {
+	margin-left:20px;
+}
+
+/* Create new list page */
+
+.create-list {
+	margin-left:20px;
+}
+
+/* Edit task page */
+
+.edit-task {
+	text-align:center;
+}
+
+.edit-task-form {
+	width:250px;
+}
+
+.edit-table {
+	max-width:1000px;
+	margin-left:auto;
+	margin-right:auto;
 }

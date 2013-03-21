@@ -1,20 +1,13 @@
-<h2><%= current_user.name %>'s Completed Tasks</h2>
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th>Task</th>
-				<th>Date Completed</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% current_user.list_items.each do |list_item| %>
-			<% if list_item.complete != true %>
-			<% else %>
-				<tr>
-					<td><%= list_item.task %></td>
-					<td><%= list_item.updated_at.strftime("%A, %b %d")%></td>
-				</tr>
-					<% end %>
-					<% end %>
-	</tbody>
-	</table>
+<div class="page">
+	<section class="page-section">
+		<header class="page-section-header">
+			<h2><%= current_user.name %>'s Completed Tasks</h2>
+		</header>
+		<div class="list-view">
+			<%= render 'completedtasks' %>
+		<div class="list-footer">
+			<%= link_to "My Lists", lists_path %>
+		</div>
+		</div>
+	</section>
+</div>

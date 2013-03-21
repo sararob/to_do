@@ -1,6 +1,8 @@
+<div class="sign-in-form">
 <h2>Sign in</h2>
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { class: 'form-horizontal' }) do |f| %>
+<%= f.error_notification %>
 
     <%= f.input :email %>
     <%= f.input :password %>
@@ -10,4 +12,5 @@
     <%= f.button :submit, "Sign in", class: "btn btn-primary" %>
   </div>
 <% end %>
+</div>
 
