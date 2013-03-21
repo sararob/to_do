@@ -15,5 +15,7 @@
 //= require_tree .
 
 $(function (){
-        $('#list_item_deadline').datepicker();
+        $('#list_item_deadline').datepicker({
+					dateFormat: "yy-mm-dd"
+				});
 });

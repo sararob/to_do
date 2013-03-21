@@ -6,6 +6,7 @@ gem 'devise'
 gem 'simple_form'
 gem "paperclip", "~> 3.0"
 gem "cocaine", "~> 0.5.0"
+gem 'jquery_datepicker'
 
 group :production do
   gem 'pg'
