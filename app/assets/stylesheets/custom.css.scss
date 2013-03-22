@@ -6,14 +6,10 @@ $baseFontFamily: Oxygen;
 @import 'bootstrap-responsive';
 
 .navbar-inner {
-	/* @include box-shadow(none !important); */
-	border: 0; 
-
-}
-
-header.container.navbar-container {
-	height:45px;
+	background-image: -webkit-leaner-gradient(top, #fff, #f2f2f2);
+	background-repeat:repeat-x;
 	border:1px solid #d4d4d4;
+
 }
 
 .footer {

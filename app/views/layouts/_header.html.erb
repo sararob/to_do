@@ -1,15 +1,11 @@
-<header class="container navbar-container">
-	<div class="navbar-wrapper">
-		<div class="navbar">
-			<div class="navbar-inner">
-				<div class="container">
+<header class="navbar navbar-fluid-top">
+	<div class="navbar-inner">
+		<div class="container">
 					<%= link_to "To Do", root_path, id: "logo" %>
-				<div class="nav pull-right">
-					<div class="nav-collapse collapse">
-					<ul class="nav">
+					<nav>
+				<ul class="nav pull-right">
 						<li><%= link_to "Home", root_path %></li>
 						<li><%= link_to "About", about_path %></li>
-						<ul class="nav pull-right">
 						<% if user_signed_in? %>
 								<li><%= link_to "Create a List", new_list_path %></li>
 								<li><%= link_to "View My Lists", lists_path %></li>
@@ -18,10 +14,7 @@
 								<li><%= link_to "Sign in", new_user_session_path %></li>
 						<% end %>
 					</ul>
-					</div>
+					</nav>
 				</div>
 			</div>
-		</div>
-	</div>
-</div>
 </header>
